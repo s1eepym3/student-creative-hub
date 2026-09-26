@@ -1,0 +1,291 @@
+/* ==========================================================================
+   WARM LAYERED SOFT MINIMALISM DESIGN SYSTEM
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap');
+
+:root {
+    /* Backgrounds & Surfaces */
+    --bg-app: #F6F2EC;
+    --bg-section: #F8F5F1;
+    --surface-primary: #FCFAF8;
+    --surface-secondary: #F7F2ED;
+    --surface-project: #F8F3EE;
+    --surface-modal: #FFFDFC;
+    --surface-hover: #F3EEE8;
+
+    /* Text Colors */
+    --text-primary: #2E2E2E;
+    --text-secondary: #6B6B6B;
+
+    /* Accent & Brand Colors */
+    --color-primary: #5C7C6F;       /* Sage Green (slightly desaturated) */
+    --color-secondary: #C48A5A;     /* Warm Terracotta */
+    --color-success: #e8f5e9;
+    --color-success-text: #2e7d32;
+    --color-warning: #fff3cd;
+    --color-warning-text: #856404;
+    --color-danger: #f8d7da;
+    --color-danger-text: #721c24;
+
+    /* Borders & Shadows */
+    --border-soft: rgba(216, 207, 196, 0.45);
+    --shadow-soft: 0 4px 14px rgba(0, 0, 0, 0.04);
+
+    /* Border Radii */
+    --radius-card: 20px;
+    --radius-button: 12px;
+    --radius-input: 12px;
+    --radius-modal: 24px;
+    --radius-image: 16px;
+
+    /* Typography */
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+/* ==========================================================================
+   GLOBAL STYLES
+   ========================================================================== */
+
+body {
+    background-color: var(--bg-app) !important;
+    color: var(--text-primary) !important;
+    font-family: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    color: var(--text-primary) !important;
+}
+
+a {
+    color: var(--color-primary);
+    transition: color 150ms ease-out;
+}
+a:hover {
+    color: var(--color-secondary);
+}
+
+/* ==========================================================================
+   NAVBAR & HEADER
+   ========================================================================== */
+
+.navbar {
+    background-color: var(--bg-section) !important;
+    border-bottom: 1px solid var(--border-soft) !important;
+    box-shadow: none !important;
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+}
+
+.navbar-brand {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: var(--text-primary) !important;
+    font-weight: 500;
+    padding: 8px 16px !important;
+    border-radius: var(--radius-button);
+    transition: all 150ms ease-out;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    background-color: var(--surface-hover);
+    color: var(--color-primary) !important;
+}
+
+.navbar-light .navbar-nav .active > .nav-link,
+.navbar-light .navbar-nav .nav-link.active {
+    background-color: var(--surface-secondary) !important;
+    color: var(--text-primary) !important;
+}
+
+/* ==========================================================================
+   CARDS & CONTAINERS
+   ========================================================================== */
+
+.card {
+    background-color: var(--surface-primary) !important;
+    border: 1px solid var(--border-soft) !important;
+    box-shadow: var(--shadow-soft) !important;
+    border-radius: var(--radius-card) !important;
+    padding: 10px;
+    transition: transform 150ms ease-out, background-color 150ms ease-out, box-shadow 150ms ease-out;
+}
+
+.card:hover {
+    background-color: var(--surface-hover) !important;
+    transform: scale(1.015);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05) !important;
+}
+
+.card-header {
+    background-color: transparent !important;
+    border-bottom: 1px solid var(--border-soft) !important;
+    padding: 15px 20px !important;
+}
+
+.card-body {
+    padding: 20px !important;
+}
+
+.card-footer {
+    background-color: transparent !important;
+    border-top: 1px solid var(--border-soft) !important;
+}
+
+/* Special project cards (slightly warmer) */
+.project-card, .card-project, [class*="project-detail"] .card {
+    background-color: var(--surface-project) !important;
+}
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+
+.btn {
+    border-radius: var(--radius-button) !important;
+    font-weight: 500;
+    padding: 10px 20px !important;
+    font-size: 0.9rem;
+    transition: all 150ms ease-out;
+}
+
+.btn-primary, .btn-success {
+    background-color: var(--color-primary) !important;
+    border-color: var(--color-primary) !important;
+    color: #FFFFFF !important;
+}
+
+.btn-primary:hover, .btn-success:hover {
+    background-color: #4a6459 !important; /* Desaturated darker green */
+    border-color: #4a6459 !important;
+    transform: translateY(-1px);
+}
+
+.btn-outline-primary, .btn-outline-success {
+    background-color: var(--surface-primary) !important;
+    border: 1px solid var(--border-soft) !important;
+    color: var(--text-primary) !important;
+}
+
+.btn-outline-primary:hover, .btn-outline-success:hover {
+    background-color: var(--surface-hover) !important;
+    color: var(--color-primary) !important;
+    border-color: var(--color-primary) !important;
+}
+
+.btn-danger {
+    background-color: #e57373 !important; /* Muted Red */
+    border-color: #e57373 !important;
+    color: #FFFFFF !important;
+}
+.btn-danger:hover {
+    background-color: #d32f2f !important;
+    border-color: #d32f2f !important;
+}
+
+/* ==========================================================================
+   FORMS & INPUTS
+   ========================================================================== */
+
+.form-control, .form-select {
+    border-radius: var(--radius-input) !important;
+    border: 1px solid var(--border-soft) !important;
+    background-color: var(--surface-primary) !important;
+    color: var(--text-primary) !important;
+    padding: 12px 16px !important;
+    font-size: 0.9rem;
+    transition: border-color 150ms ease-out, box-shadow 150ms ease-out;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--color-primary) !important;
+    box-shadow: 0 0 0 3px rgba(92, 124, 111, 0.15) !important;
+    background-color: var(--surface-primary) !important;
+}
+
+/* ==========================================================================
+   TABLES
+   ========================================================================== */
+
+.table-responsive {
+    border-radius: var(--radius-card);
+    border: 1px solid var(--border-soft);
+    overflow: hidden;
+    background-color: var(--surface-primary);
+    box-shadow: var(--shadow-soft);
+}
+
+.table {
+    margin-bottom: 0 !important;
+    background-color: var(--surface-primary) !important;
+}
+
+.table th {
+    background-color: var(--bg-section) !important;
+    color: var(--text-primary) !important;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    border-bottom: 1px solid var(--border-soft) !important;
+    padding: 14px 20px !important;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.table td {
+    border-bottom: 1px solid var(--border-soft) !important;
+    padding: 14px 20px !important;
+    color: var(--text-secondary) !important;
+    vertical-align: middle;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: var(--bg-section) !important;
+}
+
+/* ==========================================================================
+   ALERTS, PROGRESS BARS & BADGES
+   ========================================================================== */
+
+.progress {
+    background-color: var(--surface-secondary) !important;
+    border-radius: 10px !important;
+}
+
+.progress-bar {
+    background-color: var(--color-primary) !important;
+}
+
+.badge {
+    border-radius: 6px !important;
+    font-weight: 500 !important;
+    padding: 6px 12px !important;
+}
+
+/* ==========================================================================
+   MODALS
+   ========================================================================== */
+
+.modal-content {
+    background-color: var(--surface-modal) !important;
+    border: 1px solid var(--border-soft) !important;
+    border-radius: var(--radius-modal) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06) !important;
+}
+
+.modal-header {
+    border-bottom: 1px solid var(--border-soft) !important;
+}
+
+.modal-footer {
+    border-top: 1px solid var(--border-soft) !important;
+}

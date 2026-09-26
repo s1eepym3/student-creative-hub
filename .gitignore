@@ -1,0 +1,63 @@
+# Environment
+.env
+.env.*
+!.env.example
+
+# Laravel
+/node_modules
+/public/build
+/public/hot
+/public/storage
+/storage/*.key
+/storage/pail
+/vendor
+/bootstrap/cache/*
+!.gitkeep
+/storage/app/public/
+/storage/framework/cache/
+/storage/framework/sessions/
+/storage/framework/views/
+/storage/logs/*
+
+# Database
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.sql
+
+# Logs & Debug
+*.log
+npm-debug.log
+yarn-error.log
+
+# Testing & Tools
+.phpactor.json
+.phpunit.result.cache
+/.phpunit.cache
+
+# Build & Homestead
+/auth.json
+Homestead.json
+Homestead.yaml
+
+# Backup & Temp
+*.bak
+*.tmp
+
+# IDE & OS
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+/.fleet
+/.idea
+/.nova
+/.vscode
+/.zed
+*.sublime-project
+*.sublime-workspace
+*.iml
+/*.swp
+/*.swo
+/*.swn
+*~
